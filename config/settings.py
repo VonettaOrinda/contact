@@ -34,7 +34,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'thevonetteway@gmail.com'
 EMAIL_HOST = 'smtp.sendgrid.net' 
 EMAIL_HOST_USER = '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' 
-EMAIL_HOST_PASSWORD = 'orindaatieno27!!' 
+EMAIL_HOST_PASSWORD = 'xxx' 
 EMAIL_PORT = 587 
 EMAIL_USE_TLS = True 
 
