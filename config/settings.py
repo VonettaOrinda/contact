@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,8 +29,14 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # email
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
 DEFAULT_FROM_EMAIL = 'thevonetteway@gmail.com'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.sendgrid.net' 
+EMAIL_HOST_USER = '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' 
+EMAIL_HOST_PASSWORD = 'orindaatieno27!!' 
+EMAIL_PORT = 587 
+EMAIL_USE_TLS = True 
 
 
 # Application definition
@@ -61,16 +68,19 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
-    {
+    {    
+         
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+            
             ],
         },
     },
